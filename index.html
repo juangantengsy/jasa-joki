@@ -1,0 +1,1353 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jasa Joki Tugas IT</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Partikel animasi */
+    .particle {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background: rgba(59,130,246,0.7);
+      border-radius: 50%;
+      animation: float 6s infinite ease-in-out;
+    }
+    @keyframes float {
+      0%,100% { transform: translateY(0) translateX(0); opacity: 0.8; }
+      50% { transform: translateY(-40px) translateX(30px); opacity: 0.3; }
+    }
+    /* Efek floating untuk ilustrasi */
+    .float-slow {
+      animation: floating 6s ease-in-out infinite;
+    }
+    @keyframes floating {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+    /* Typing effect */
+    .typing::after {
+      content: '|';
+      animation: blink 0.8s infinite;
+      color: #2563eb;
+      margin-left: 2px;
+    }
+    @keyframes blink {
+      0%,50% { opacity: 1; }
+      50.01%,100% { opacity: 0; }
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+ <!-- Navbar Modern dengan Icon -->
+<nav id="navbar" class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-200 transition-all duration-500">
+  <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+    
+    <!-- Logo -->
+    <a href="#" class="flex items-center space-x-2">
+      <img src="https://cdn-icons-png.flaticon.com/512/2721/2721299.png" alt="Logo" class="w-9 h-9">
+      <span class="text-2xl font-bold text-blue-600">JokiTugasIT</span>
+    </a>
+
+    <!-- Desktop Menu -->
+    <div class="hidden lg:flex items-center space-x-8 font-medium text-gray-700">
+      <a href="#beranda" class="flex items-center gap-2 group hover:text-blue-600 transition">
+        <!-- Icon Home -->
+        <svg class="w-5 h-5 text-gray-500 group-hover:text-blue-600 transition" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3 9.75L12 4l9 5.75v9.25a2 2 0 01-2 2H5a2 2 0 01-2-2V9.75z"/>
+        </svg>
+        Beranda
+      </a>
+      <a href="#layanan" class="flex items-center gap-2 group hover:text-blue-600 transition">
+        <!-- Icon Services -->
+        <svg class="w-5 h-5 text-gray-500 group-hover:text-blue-600 transition" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6"/>
+        </svg>
+        Layanan
+      </a>
+      <a href="#testimoni" class="flex items-center gap-2 group hover:text-blue-600 transition">
+        <!-- Icon Testimonial -->
+        <svg class="w-5 h-5 text-gray-500 group-hover:text-blue-600 transition" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M7 8h10M7 12h6m5-6v10a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h9l5 5z"/>
+        </svg>
+        Testimoni
+      </a>
+      <a href="#kontak" class="flex items-center gap-2 group hover:text-blue-600 transition">
+        <!-- Icon Contact -->
+        <svg class="w-5 h-5 text-gray-500 group-hover:text-blue-600 transition" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 10.5a8.38 8.38 0 01-.9 3.8l-1.35 2.7a2 2 0 01-2.7.9l-2.1-1.05a8.5 8.5 0 11-3.8-3.8l1.05-2.1a2 2 0 01.9-2.7l2.7-1.35A8.38 8.38 0 0121 10.5z"/>
+        </svg>
+        Kontak
+      </a>
+
+      <!-- CTA -->
+      <a href="#kontak" class="ml-4 bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-2 rounded-lg shadow hover:scale-105 transition-transform">
+        +62 878-7416-6765
+      </a>
+    </div>
+
+    <!-- Hamburger -->
+    <button id="menu-btn" class="lg:hidden block text-gray-700 focus:outline-none">
+      <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="lg:hidden hidden flex flex-col space-y-4 px-6 py-4 bg-white/95 backdrop-blur-md border-t text-gray-700 font-medium">
+    <a href="#beranda" class="flex items-center gap-2 hover:text-blue-600">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3 9.75L12 4l9 5.75v9.25a2 2 0 01-2 2H5a2 2 0 01-2-2V9.75z"/>
+      </svg>
+      Beranda
+    </a>
+    <a href="#layanan" class="flex items-center gap-2 hover:text-blue-600">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6"/>
+      </svg>
+      Layanan
+    </a>
+    <a href="#testimoni" class="flex items-center gap-2 hover:text-blue-600">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M7 8h10M7 12h6m5-6v10a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h9l5 5z"/>
+      </svg>
+      Testimoni
+    </a>
+    <a href="#kontak" class="flex items-center gap-2 hover:text-blue-600">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M21 10.5a8.38 8.38 0 01-.9 3.8l-1.35 2.7a2 2 0 01-2.7.9l-2.1-1.05a8.5 8.5 0 11-3.8-3.8l1.05-2.1a2 2 0 01.9-2.7l2.7-1.35A8.38 8.38 0 0121 10.5z"/>
+      </svg>
+      Kontak
+    </a>
+    <a href="#kontak" class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-2 rounded-lg shadow text-center">
+      Hubungi Kami
+    </a>
+  </div>
+</nav>
+
+<script>
+  // Toggle mobile menu
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+
+  // Change navbar background on scroll
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      navbar.classList.add("bg-white", "shadow-md");
+    } else {
+      navbar.classList.remove("bg-white", "shadow-md");
+    }
+  });
+</script>
+
+  <!-- Hero Section -->
+  <section class="relative bg-gradient-to-r from-blue-50 to-indigo-100 pt-32 pb-24 overflow-hidden">
+    <!-- Partikel animasi -->
+    <div class="particle" style="top:15%; left:20%; animation-delay:0s;"></div>
+    <div class="particle" style="top:35%; left:75%; animation-delay:2s;"></div>
+    <div class="particle" style="top:70%; left:25%; animation-delay:4s;"></div>
+    <div class="particle" style="top:60%; left:85%; animation-delay:1s;"></div>
+
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center relative z-10">
+      <!-- Text -->
+      <div>
+        <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4 leading-tight">
+          Jasa Joki Tugas IT <span class="text-blue-600"> By Juan</span>
+        </h1>
+        <p id="typing-text" class="text-xl text-gray-700 font-medium mb-6 typing"></p>
+        <a href="#kontak" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg shadow-lg transition">
+          Pesan Sekarang
+        </a>
+      </div>
+      <!-- Ilustrasi Animasi -->
+      <div class="flex justify-center relative">
+        <div class="w-80 h-80 bg-gradient-to-tr from-blue-500 to-indigo-600 rounded-full opacity-20 absolute animate-pulse"></div>
+        <img src="https://cdn-icons-png.flaticon.com/512/2920/2920277.png" 
+             alt="Ilustrasi Laptop Coding"
+             class="relative w-80 float-slow">
+      </div>
+    </div>
+  </section>
+
+ <!-- Hero Section -->
+<section class="bg-gradient-to-r from-indigo-600 to-blue-500 text-white py-16 px-6">
+  <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 items-center">
+    <!-- Left Content -->
+    <div>
+      <h1 class="text-4xl md:text-5xl font-bold leading-tight">
+        Solusi Tugas IT <br />
+        <span class="text-yellow-300">Cepat & Profesional</span>
+      </h1>
+      <p class="mt-4 text-lg text-gray-100">
+        Jasa joki tugas IT mulai dari pemrograman, pembuatan website, jaringan, hingga laporan & dokumentasi dengan hasil terbaik.
+      </p>
+      <div class="mt-6">
+        <a href="#layanan" class="bg-yellow-400 hover:bg-yellow-500 text-black font-semibold px-6 py-3 rounded-lg shadow-lg transition">
+          Lihat Layanan
+        </a>
+      </div>
+    </div>
+    <!-- Right Animation -->
+    <div class="flex justify-center">
+      <lottie-player 
+        src="https://assets2.lottiefiles.com/packages/lf20_tfb3estd.json"  
+        background="transparent"  
+        speed="1"  
+        loop autoplay
+        class="w-80 md:w-[400px] h-auto">
+      </lottie-player>
+    </div>
+  </div>
+</section>
+
+<!-- Layanan Kami -->
+<section id="layanan" class="relative py-20 bg-gradient-to-b from-gray-900 via-blue-900 to-gray-900 overflow-hidden">
+  <!-- Background ornamen animasi -->
+  <div class="absolute inset-0 -z-10 opacity-30">
+    <lottie-player 
+      src="https://assets2.lottiefiles.com/packages/lf20_q5pk6p1k.json" 
+      background="transparent"  
+      speed="0.6"  
+      loop autoplay
+      class="w-full h-full">
+    </lottie-player>
+  </div>
+
+  <div class="max-w-7xl mx-auto text-center mb-16 relative z-10">
+    <h2 class="text-3xl md:text-4xl font-extrabold text-white">Layanan Kami</h2>
+    <p class="mt-4 text-gray-300 max-w-2xl mx-auto">
+      Solusi IT profesional dengan tampilan modern dan hasil berkualitas tinggi.
+    </p>
+  </div>
+
+  <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10 max-w-7xl mx-auto relative z-10">
+    
+    <!-- Pemrograman -->
+    <div class="group bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 
+                shadow-xl hover:shadow-2xl transition transform hover:-translate-y-2 duration-300">
+      <div class="flex justify-center mb-6">
+        <div class="bg-blue-500/20 p-4 rounded-full group-hover:scale-110 transition transform">
+          <img src="https://i.pinimg.com/1200x/0c/22/49/0c224994d7ccd4fec8cdd397403aff2b.jpg" 
+               alt="Pemrograman" class="w-16 h-16" />
+        </div>
+      </div>
+      <h3 class="text-xl font-semibold text-white mb-3">Pemrograman</h3>
+      <p class="text-gray-300 text-sm">
+        Tugas coding berbagai bahasa: Python, Java, C++, PHP, JavaScript, dan lainnya.
+      </p>
+    </div>
+
+    <!-- Website Development -->
+    <div class="group bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 
+                shadow-xl hover:shadow-2xl transition transform hover:-translate-y-2 duration-300">
+      <div class="flex justify-center mb-6">
+        <div class="bg-purple-500/20 p-4 rounded-full group-hover:scale-110 transition transform">
+          <img src="https://img.icons8.com/color/96/domain.png" 
+               alt="Website Development" class="w-16 h-16" />
+        </div>
+      </div>
+      <h3 class="text-xl font-semibold text-white mb-3">Website Development</h3>
+      <p class="text-gray-300 text-sm">
+        Website modern, responsif, profesional, dengan tampilan elegan sesuai kebutuhan Anda.
+      </p>
+    </div>
+
+    <!-- Database & Jaringan -->
+    <div class="group bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 
+                shadow-xl hover:shadow-2xl transition transform hover:-translate-y-2 duration-300">
+      <div class="flex justify-center mb-6">
+        <div class="bg-teal-500/20 p-4 rounded-full group-hover:scale-110 transition transform">
+          <img src="https://img.icons8.com/color/96/network.png" 
+               alt="Database & Jaringan" class="w-16 h-16" />
+        </div>
+      </div>
+      <h3 class="text-xl font-semibold text-white mb-3">Database & Jaringan</h3>
+      <p class="text-gray-300 text-sm">
+        Manajemen database & desain jaringan yang aman, cepat, dan stabil.
+      </p>
+    </div>
+
+    <!-- Laporan & Dokumentasi -->
+    <div class="group bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 
+                shadow-xl hover:shadow-2xl transition transform hover:-translate-y-2 duration-300">
+      <div class="flex justify-center mb-6">
+        <div class="bg-pink-500/20 p-4 rounded-full group-hover:scale-110 transition transform">
+          <img src="https://img.icons8.com/color/96/task.png" 
+               alt="Laporan & Dokumentasi" class="w-16 h-16" />
+        </div>
+      </div>
+      <h3 class="text-xl font-semibold text-white mb-3">Laporan & Dokumentasi</h3>
+      <p class="text-gray-300 text-sm">
+        Laporan & dokumentasi rapi, lengkap, dan siap presentasi dengan tampilan profesional.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- Lottie Script -->
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+<!-- Lottie Script -->
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+<!-- ===== Section Promosi ===== -->
+<section class="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 py-20 px-6">
+  <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
+    
+    <!-- Text -->
+    <div class="flex-1 text-white space-y-6">
+      <h2 class="text-3xl md:text-4xl font-bold">Butuh Bantuan IT?</h2>
+      <p class="text-lg text-gray-300 leading-relaxed">
+        Kami siap memberikan solusi terbaik untuk 
+        <span class="font-semibold text-indigo-400">Pemrograman</span>, 
+        <span class="font-semibold text-indigo-400">Website Development</span>, 
+        <span class="font-semibold text-indigo-400">Database & Jaringan</span>, 
+        serta <span class="font-semibold text-indigo-400">Laporan & Dokumentasi</span>.
+      </p>
+      <a href="#hubungi" 
+         class="inline-block bg-gradient-to-r from-pink-500 to-orange-400 px-6 py-3 rounded-lg font-semibold shadow-lg hover:scale-105 transition-transform duration-300">
+        Hubungi Kami
+      </a>
+    </div>
+
+    <!-- Image -->
+    <div class="flex-1 flex justify-center">
+      <img src="https://i.pinimg.com/736x/76/a4/3c/76a43c18e7533f8bf1f92cb816f0a9ee.jpg" alt="Promosi IT" 
+           class="rounded-xl shadow-2xl max-w-md animate-bounce-slow">
+    </div>
+  </div>
+</section>
+
+<!-- Pricing Plan -->
+<section id="pricing" class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <!-- Judul -->
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-bold text-gray-900 mb-4">Paket Layanan</h2>
+      <p class="text-lg text-gray-600">Pilih paket sesuai kebutuhan Anda, dari tugas sederhana hingga proyek besar</p>
+    </div>
+
+    <!-- Grid Paket -->
+    <div class="grid gap-8 md:grid-cols-3">
+      
+      <!-- Basic -->
+      <div class="group bg-gray-50 rounded-2xl shadow-md p-8 hover:shadow-xl transition duration-300 transform hover:-translate-y-2">
+        <h3 class="text-2xl font-semibold mb-4 text-gray-800">Basic</h3>
+        <p class="text-gray-500 mb-6">Cocok untuk tugas kecil & pengerjaan cepat.</p>
+        <div class="text-4xl font-bold text-gray-900 mb-6">Rp 100K<span class="text-lg text-gray-500">/tugas</span></div>
+        <ul class="mb-8 space-y-3 text-gray-600">
+          <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-green-500 mr-2"></i> 1x Revisi</li>
+          <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-green-500 mr-2"></i> Deadline 2-3 hari</li>
+          <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-green-500 mr-2"></i> File laporan standar</li>
+        </ul>
+        <a href="#order" class="block w-full text-center py-3 px-6 bg-gray-900 text-white rounded-xl font-medium hover:bg-gray-700 transition">Pilih Paket</a>
+      </div>
+
+      <!-- Pro (Highlight) -->
+      <div class="group bg-blue-600 text-white rounded-2xl shadow-lg p-8 hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 relative">
+        <span class="absolute top-4 right-4 bg-yellow-400 text-gray-900 text-xs font-bold px-3 py-1 rounded-full">Populer</span>
+        <h3 class="text-2xl font-semibold mb-4">Pro</h3>
+        <p class="mb-6">Pilihan terbaik untuk tugas & proyek skala menengah.</p>
+        <div class="text-4xl font-bold mb-6">Rp 250K<span class="text-lg font-normal">/tugas</span></div>
+        <ul class="mb-8 space-y-3">
+          <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-yellow-300 mr-2"></i> 3x Revisi</li>
+          <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-yellow-300 mr-2"></i> Deadline fleksibel</li>
+          <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-yellow-300 mr-2"></i> File laporan + presentasi</li>
+        </ul>
+        <a href="#order" class="block w-full text-center py-3 px-6 bg-white text-blue-600 rounded-xl font-medium hover:bg-gray-100 transition">Pilih Paket</a>
+      </div>
+
+      <!-- Premium -->
+      <div class="group bg-gray-50 rounded-2xl shadow-md p-8 hover:shadow-xl transition duration-300 transform hover:-translate-y-2">
+        <h3 class="text-2xl font-semibold mb-4 text-gray-800">Premium</h3>
+        <p class="text-gray-500 mb-6">Untuk proyek besar & kebutuhan profesional.</p>
+        <div class="text-4xl font-bold text-gray-900 mb-6">Rp 500K<span class="text-lg text-gray-500">/tugas</span></div>
+        <ul class="mb-8 space-y-3 text-gray-600">
+          <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-green-500 mr-2"></i> Unlimited Revisi</li>
+          <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-green-500 mr-2"></i> Prioritas deadline</li>
+          <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-green-500 mr-2"></i> File laporan + presentasi + desain</li>
+        </ul>
+        <a href="#order" class="block w-full text-center py-3 px-6 bg-gray-900 text-white rounded-xl font-medium hover:bg-gray-700 transition">Pilih Paket</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Lucide Icon Script -->
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+  lucide.createIcons();
+</script>
+
+
+<!-- FAQ Section -->
+<section id="faq" class="py-20 bg-gradient-to-r from-blue-600 to-purple-700">
+  <div class="max-w-5xl mx-auto px-6">
+    <!-- Judul -->
+    <div class="text-center mb-12">
+      <div class="flex items-center justify-center space-x-3">
+        <!-- Animasi ilustrasi -->
+        <div class="w-12 h-12">
+          <lottie-player 
+            src="https://assets4.lottiefiles.com/packages/lf20_jcikwtux.json"  
+            background="transparent"  
+            speed="1"  
+            loop autoplay>
+          </lottie-player>
+        </div>
+        <h2 class="text-4xl font-bold text-white">FAQ</h2>
+      </div>
+      <p class="text-lg text-gray-200 mt-3">Pertanyaan yang sering diajukan oleh klien kami</p>
+    </div>
+
+    <!-- Accordion -->
+    <div class="space-y-5">
+      
+      <!-- Item -->
+      <div class="faq-item bg-white rounded-2xl shadow-lg overflow-hidden">
+        <button class="faq-toggle w-full flex justify-between items-center p-5 text-left text-lg font-semibold text-gray-800">
+          <span>Berapa lama pengerjaan tugas?</span>
+          <i data-lucide="chevron-down" class="w-6 h-6 text-gray-500 transition-transform duration-300"></i>
+        </button>
+        <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out px-5 text-gray-600">
+          <p class="pb-5">Lama pengerjaan tergantung tingkat kesulitan. Umumnya 1–3 hari untuk tugas kecil, dan bisa lebih lama untuk proyek kompleks.</p>
+        </div>
+      </div>
+
+      <!-- Item -->
+      <div class="faq-item bg-white rounded-2xl shadow-lg overflow-hidden">
+        <button class="faq-toggle w-full flex justify-between items-center p-5 text-left text-lg font-semibold text-gray-800">
+          <span>Apakah ada revisi jika hasil belum sesuai?</span>
+          <i data-lucide="chevron-down" class="w-6 h-6 text-gray-500 transition-transform duration-300"></i>
+        </button>
+        <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out px-5 text-gray-600">
+          <p class="pb-5">Ya, setiap paket layanan sudah termasuk revisi. Jumlah revisi tergantung pada paket yang Anda pilih.</p>
+        </div>
+      </div>
+
+      <!-- Item -->
+      <div class="faq-item bg-white rounded-2xl shadow-lg overflow-hidden">
+        <button class="faq-toggle w-full flex justify-between items-center p-5 text-left text-lg font-semibold text-gray-800">
+          <span>Bagaimana cara pembayaran?</span>
+          <i data-lucide="chevron-down" class="w-6 h-6 text-gray-500 transition-transform duration-300"></i>
+        </button>
+        <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out px-5 text-gray-600">
+          <p class="pb-5">Pembayaran dapat dilakukan melalui transfer bank, e-wallet, atau metode lain yang sudah disepakati.</p>
+        </div>
+      </div>
+
+      <!-- Item -->
+      <div class="faq-item bg-white rounded-2xl shadow-lg overflow-hidden">
+        <button class="faq-toggle w-full flex justify-between items-center p-5 text-left text-lg font-semibold text-gray-800">
+          <span>Apakah bisa order mendadak?</span>
+          <i data-lucide="chevron-down" class="w-6 h-6 text-gray-500 transition-transform duration-300"></i>
+        </button>
+        <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out px-5 text-gray-600">
+          <p class="pb-5">Bisa, namun akan dikenakan biaya tambahan sesuai tingkat urgensi dan kompleksitas tugas.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Lottie + Lucide -->
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+  lucide.createIcons();
+
+  document.querySelectorAll(".faq-toggle").forEach(button => {
+    button.addEventListener("click", () => {
+      const item = button.closest(".faq-item");
+      const content = item.querySelector(".faq-content");
+      const icon = button.querySelector("i");
+
+      if (content.style.maxHeight && content.style.maxHeight !== "0px") {
+        content.style.maxHeight = "0px";
+        icon.classList.remove("rotate-180");
+      } else {
+        document.querySelectorAll(".faq-content").forEach(c => c.style.maxHeight = "0px");
+        document.querySelectorAll(".faq-toggle i").forEach(i => i.classList.remove("rotate-180"));
+
+        content.style.maxHeight = content.scrollHeight + "px";
+        icon.classList.add("rotate-180");
+      }
+    });
+  });
+</script>
+
+
+<!-- ===== Statistik Section ===== -->
+<section id="statistik" class="py-20 bg-gradient-to-r from-blue-50 via-white to-indigo-50">
+  <div class="max-w-7xl mx-auto px-6 text-center">
+    <h2 class="text-4xl font-extrabold text-gray-800 mb-12">Pencapaian Kami</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+      
+      <!-- Card 1 -->
+      <div class="bg-white rounded-2xl shadow-lg p-6 hover:-translate-y-2 transition transform duration-300">
+        <div class="flex justify-center items-center w-16 h-16 mx-auto rounded-full bg-blue-100 mb-4">
+          <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 17v-6h6v6h4v-8h3L12 3 2 9h3v8z" />
+          </svg>
+        </div>
+        <h3 class="text-3xl font-bold text-gray-800 counter" data-target="41">0</h3>
+        <p class="text-gray-600 mt-2">Tugas Selesai</p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-white rounded-2xl shadow-lg p-6 hover:-translate-y-2 transition transform duration-300">
+        <div class="flex justify-center items-center w-16 h-16 mx-auto rounded-full bg-purple-100 mb-4">
+          <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a4 4 0 00-4-4h-1V9a7 7 0 10-14 0v5H4a4 4 0 00-4 4v2h5" />
+          </svg>
+        </div>
+        <h3 class="text-3xl font-bold text-gray-800 counter" data-target="41">0</h3>
+        <p class="text-gray-600 mt-2">Klien Puas</p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-white rounded-2xl shadow-lg p-6 hover:-translate-y-2 transition transform duration-300">
+        <div class="flex justify-center items-center w-16 h-16 mx-auto rounded-full bg-green-100 mb-4">
+          <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m1-5a9 9 0 11-6 0" />
+          </svg>
+        </div>
+        <h3 class="text-3xl font-bold text-gray-800 counter" data-target="3">0</h3>
+        <p class="text-gray-600 mt-2">Tahun Pengalaman</p>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="bg-white rounded-2xl shadow-lg p-6 hover:-translate-y-2 transition transform duration-300">
+        <div class="flex justify-center items-center w-16 h-16 mx-auto rounded-full bg-pink-100 mb-4">
+          <svg class="w-8 h-8 text-pink-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M11 11V9a4 4 0 118 0v2h1a2 2 0 012 2v7H8v-7a2 2 0 012-2h1z" />
+          </svg>
+        </div>
+        <h3 class="text-3xl font-bold text-gray-800 counter" data-target="24">0</h3>
+        <p class="text-gray-600 mt-2">Jam Support</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+// Counter animasi
+const counters = document.querySelectorAll('.counter');
+const speed = 100; // semakin kecil semakin cepat
+
+const animateCounters = () => {
+  counters.forEach(counter => {
+    const updateCount = () => {
+      const target = +counter.getAttribute('data-target');
+      const count = +counter.innerText;
+      const increment = Math.ceil(target / speed);
+
+      if (count < target) {
+        counter.innerText = count + increment;
+        setTimeout(updateCount, 40);
+      } else {
+        counter.innerText = target;
+      }
+    };
+    updateCount();
+  });
+};
+
+// Jalankan saat section terlihat
+const section = document.getElementById('statistik');
+let triggered = false;
+window.addEventListener('scroll', () => {
+  const sectionTop = section.offsetTop - window.innerHeight + 100;
+  if (!triggered && window.scrollY > sectionTop) {
+    animateCounters();
+    triggered = true;
+  }
+});
+</script>
+
+<!-- ===== Blog Section Wrapper ===== -->
+<div x-data="{ showBlog: false, category: 'All', posts: [
+        { title: 'Tips Menjadi Web Developer Handal', desc: 'Pelajari cara meningkatkan skill coding dengan project nyata.', category: 'Tips', categoryColor: 'text-indigo-600', image: 'https://source.unsplash.com/600x400/?coding' },
+        { title: 'Berita IT Terbaru 2025', desc: 'Update tren teknologi terbaru yang wajib diketahui developer.', category: 'News', categoryColor: 'text-purple-600', image: 'https://source.unsplash.com/600x400/?technology' },
+        { title: 'Tutorial Membuat API dengan Node.js', desc: 'Langkah-langkah membuat REST API profesional dengan Express.js.', category: 'Tutorial', categoryColor: 'text-pink-600', image: 'https://source.unsplash.com/600x400/?laptop' },
+        { title: 'Tips Belajar Database MySQL', desc: 'Strategi menguasai query SQL dari dasar sampai advanced.', category: 'Tips', categoryColor: 'text-indigo-600', image: 'https://source.unsplash.com/600x400/?database' },
+        { title: 'AI & Teknologi Masa Depan', desc: 'Artificial Intelligence akan semakin berpengaruh di dunia kerja.', category: 'News', categoryColor: 'text-purple-600', image: 'https://source.unsplash.com/600x400/?ai' },
+        { title: 'Tutorial Tailwind CSS', desc: 'Cara cepat bikin UI modern tanpa ribet bikin CSS manual.', category: 'Tutorial', categoryColor: 'text-pink-600', image: 'https://source.unsplash.com/600x400/?tailwind' },
+        { title: 'Tips Debugging Efektif', desc: 'Cara menemukan bug dengan cepat menggunakan teknik smart logging.', category: 'Tips', categoryColor: 'text-indigo-600', image: 'https://source.unsplash.com/600x400/?debug' },
+        { title: 'Tren Startup Teknologi 2025', desc: 'Prediksi startup yang bakal booming di tahun depan.', category: 'News', categoryColor: 'text-purple-600', image: 'https://source.unsplash.com/600x400/?startup' },
+        { title: 'Tutorial Membuat Aplikasi React', desc: 'Belajar step by step bikin aplikasi React modern.', category: 'Tutorial', categoryColor: 'text-pink-600', image: 'https://source.unsplash.com/600x400/?react' }
+    ] }" class="py-12">
+
+  <!-- Tombol Show Blog -->
+  <div class="text-center my-8">
+    <button 
+      @click="showBlog = !showBlog" 
+      class="px-8 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-purple-700 hover:to-indigo-700 text-white text-lg font-semibold rounded-xl shadow-xl transition-all transform hover:scale-105">
+      <span x-show="!showBlog">📖 Lihat Blog & Artikel IT</span>
+      <span x-show="showBlog">❌ Tutup Blog & Artikel IT</span>
+    </button>
+  </div>
+
+  <!-- Blog Section -->
+  <div x-show="showBlog" x-transition class="mt-10">
+    <section class="py-16 bg-gradient-to-br from-gray-50 to-gray-100">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-12 text-gray-800 tracking-wide">
+          Blog & Artikel IT
+        </h2>
+
+        <!-- Filter Kategori -->
+        <div class="flex justify-center gap-4 mb-12">
+          <template x-for="cat in ['All','Tips','News','Tutorial']" :key="cat">
+            <button 
+              @click="category = cat"
+              :class="category === cat ? 'bg-indigo-600 text-white' : 'bg-white text-gray-700 border'" 
+              class="px-5 py-2 rounded-full shadow hover:bg-gray-100 transition font-medium">
+              <span x-text="cat"></span>
+            </button>
+          </template>
+        </div>
+
+        <!-- Artikel Grid -->
+        <div class="grid md:grid-cols-3 gap-10">
+          <template x-for="post in posts.filter(p => category === 'All' || p.category === category)" :key="post.title">
+            <article class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition transform hover:-translate-y-2">
+              <img :src="post.image" :alt="post.category" class="w-full h-56 object-cover">
+              <div class="p-6">
+                <span :class="post.categoryColor" class="text-xs uppercase font-bold" x-text="post.category"></span>
+                <h3 class="text-2xl font-semibold text-gray-800 mt-2 mb-3" x-text="post.title"></h3>
+                <p class="text-gray-600 mb-4" x-text="post.desc"></p>
+                <a href="https://csirt.teknokrat.ac.id/rahasia-jadi-web-developer-handal-dari-nol/" class="inline-block text-indigo-600 font-semibold hover:underline">Baca Selengkapnya →</a>
+              </div>
+            </article>
+          </template>
+        </div>
+
+        <!-- Pagination -->
+        <div class="flex justify-center mt-12 gap-6">
+          <button class="px-5 py-2 bg-gray-200 text-gray-700 rounded-full shadow hover:bg-gray-300 transition">← Prev</button>
+          <button class="px-5 py-2 bg-indigo-600 text-white rounded-full shadow-lg hover:bg-indigo-700 transition">Next →</button>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<!-- Alpine.js -->
+<script src="https://unpkg.com/alpinejs" defer></script>
+
+
+
+<!-- ===== Section: Sertifikat Elegan ===== -->
+<section id="sertifikat" class="py-20 bg-gradient-to-br from-indigo-50 via-white to-purple-50">
+  <div class="max-w-6xl mx-auto px-6">
+    <!-- Header -->
+    <div class="flex items-center justify-between mb-10 flex-wrap gap-4">
+      <div>
+        <h2 class="text-4xl font-extrabold text-gray-800 drop-shadow">🎓 Sertifikat & Penghargaan</h2>
+        <p class="mt-2 text-gray-600 max-w-xl">Klik untuk membuka detail, lihat gambar lebih besar, atau unduh sertifikatmu.</p>
+      </div>
+      <div class="flex gap-3">
+        <button id="expandAll" class="px-4 py-2 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-xl shadow hover:opacity-90 transition">Expand All</button>
+        <button id="collapseAll" class="px-4 py-2 bg-gray-100 text-gray-700 rounded-xl shadow hover:bg-gray-200 transition">Collapse All</button>
+      </div>
+    </div>
+
+    <!-- Accordion list -->
+    <div id="certList" class="space-y-6"></div>
+  </div>
+</section>
+
+<!-- Modal -->
+<div id="certModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/70 backdrop-blur p-4">
+  <div class="bg-white rounded-2xl shadow-2xl max-w-4xl w-full overflow-hidden animate-fadeIn">
+    <div class="flex items-center justify-between p-4 border-b">
+      <h3 id="modalTitle" class="text-xl font-bold text-gray-700">Preview</h3>
+      <div class="flex items-center gap-3">
+        <a id="modalDownload" class="px-4 py-2 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-lg text-sm shadow hover:opacity-90 transition" download>
+          Download
+        </a>
+        <button id="modalClose" class="text-gray-500 hover:text-gray-800 p-2 rounded-full hover:bg-gray-100 transition">
+          ✖
+        </button>
+      </div>
+    </div>
+    <div class="p-6">
+      <img id="modalImage" src="" alt="Sertifikat" class="w-full h-auto rounded-lg shadow-lg" />
+      <p id="modalDesc" class="mt-4 text-gray-600"></p>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ===== Sertifikat Data ===== */
+const certificates = [
+  {
+    id: 'c1',
+    title: 'Sertifikat Web Development',
+    date: 'Maret 2024',
+    thumb: '',
+    file: '',
+    desc: 'Pelatihan intensif tentang pengembangan web modern.'
+  },
+  {
+    id: 'c2',
+    title: 'Sertifikat Data Science',
+    date: 'Juni 2024',
+    thumb: 'https://via.placeholder.com/400x250/8B5CF6/fff?text=Data+Science',
+    file: 'https://via.placeholder.com/1200x800/8B5CF6/fff?text=Data+Science+Certificate',
+    desc: 'Kursus data science & machine learning level dasar-ke-menengah.'
+  },
+  {
+    id: 'c3',
+    title: 'Sertifikat Keamanan Jaringan',
+    date: 'September 2024',
+    thumb: 'https://via.placeholder.com/400x250/EC4899/fff?text=Network+Security',
+    file: 'https://via.placeholder.com/1200x800/EC4899/fff?text=Network+Security+Certificate',
+    desc: 'Pelatihan keamanan jaringan dan praktik simulasi.'
+  }
+];
+
+/* ===== Render Accordion ===== */
+const certList = document.getElementById('certList');
+
+function createCertItem(cert) {
+  const item = document.createElement('div');
+  item.className = 'bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden transition transform hover:-translate-y-1 hover:shadow-2xl';
+
+  item.innerHTML = `
+    <button aria-expanded="false" class="w-full flex items-center gap-4 focus:outline-none cert-toggle p-5">
+      <img src="${cert.thumb}" alt="${cert.title}" class="w-32 h-20 object-cover rounded-lg shadow-md">
+      <div class="flex-1 text-left">
+        <h4 class="text-lg font-semibold text-gray-800">${cert.title}</h4>
+        <div class="text-sm text-gray-500">${cert.date}</div>
+      </div>
+      <svg class="w-6 h-6 text-gray-400 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6" />
+      </svg>
+    </button>
+    <div class="cert-body max-h-0 overflow-hidden transition-all duration-500 ease-in-out px-5">
+      <div class="py-4 border-t text-gray-600">
+        <p class="mb-4">${cert.desc}</p>
+        <div class="flex flex-wrap gap-3">
+          <button class="view-btn px-4 py-2 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-lg shadow hover:opacity-90 transition" data-id="${cert.id}">🔍 Lihat</button>
+          <a href="${cert.file}" download class="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg border hover:bg-gray-200 transition">⬇️ Download</a>
+        </div>
+      </div>
+    </div>
+  `;
+  return item;
+}
+
+function renderCertificates() {
+  certList.innerHTML = '';
+  certificates.forEach(cert => certList.appendChild(createCertItem(cert)));
+  attachHandlers();
+}
+
+/* ===== Handlers ===== */
+function attachHandlers() {
+  document.querySelectorAll('.cert-toggle').forEach(btn => {
+    const svg = btn.querySelector('svg');
+    const body = btn.parentElement.querySelector('.cert-body');
+    btn.addEventListener('click', () => {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      document.querySelectorAll('.cert-toggle').forEach(other => {
+        if (other !== btn) {
+          other.setAttribute('aria-expanded', 'false');
+          other.querySelector('svg').classList.remove('rotate-180');
+          other.parentElement.querySelector('.cert-body').style.maxHeight = 0;
+        }
+      });
+      if (!expanded) {
+        btn.setAttribute('aria-expanded', 'true');
+        svg.classList.add('rotate-180');
+        body.style.maxHeight = body.scrollHeight + 'px';
+      } else {
+        btn.setAttribute('aria-expanded', 'false');
+        svg.classList.remove('rotate-180');
+        body.style.maxHeight = 0;
+      }
+    });
+  });
+
+  document.querySelectorAll('.view-btn').forEach(b => {
+    b.addEventListener('click', (e) => {
+      const id = e.currentTarget.dataset.id;
+      const cert = certificates.find(c => c.id === id);
+      if (cert) openModal(cert);
+    });
+  });
+}
+
+/* ===== Expand/Collapse All ===== */
+document.getElementById('expandAll').addEventListener('click', () => {
+  document.querySelectorAll('.cert-toggle').forEach(btn => {
+    const body = btn.parentElement.querySelector('.cert-body');
+    btn.setAttribute('aria-expanded', 'true');
+    btn.querySelector('svg').classList.add('rotate-180');
+    body.style.maxHeight = body.scrollHeight + 'px';
+  });
+});
+document.getElementById('collapseAll').addEventListener('click', () => {
+  document.querySelectorAll('.cert-toggle').forEach(btn => {
+    const body = btn.parentElement.querySelector('.cert-body');
+    btn.setAttribute('aria-expanded', 'false');
+    btn.querySelector('svg').classList.remove('rotate-180');
+    body.style.maxHeight = 0;
+  });
+});
+
+/* ===== Modal ===== */
+const modal = document.getElementById('certModal');
+const modalImage = document.getElementById('modalImage');
+const modalTitle = document.getElementById('modalTitle');
+const modalDesc = document.getElementById('modalDesc');
+const modalDownload = document.getElementById('modalDownload');
+const modalClose = document.getElementById('modalClose');
+
+function openModal(cert) {
+  modalTitle.textContent = cert.title;
+  modalDesc.textContent = cert.desc;
+  modalImage.src = cert.file;
+  modalDownload.href = cert.file;
+  modal.classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  modal.classList.add('hidden');
+  document.body.style.overflow = '';
+  modalImage.src = '';
+}
+modalClose.addEventListener('click', closeModal);
+modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+/* Init */
+renderCertificates();
+</script>
+
+<style>
+.rotate-180 { transform: rotate(180deg); }
+@keyframes fadeIn { from {opacity:0; transform:scale(0.95);} to {opacity:1; transform:scale(1);} }
+.animate-fadeIn { animation: fadeIn 0.3s ease; }
+</style>
+
+
+ <!-- Testimoni — Kirim & Tampil Langsung -->
+<section id="testimoni" class="py-20 bg-gradient-to-b from-gray-900 via-blue-900 to-gray-900 text-white">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-10">
+      <h2 class="text-3xl md:text-4xl font-extrabold">Testimoni Pelanggan</h2>
+      <p class="mt-2 text-gray-300 max-w-2xl mx-auto">Tinggalkan pengalamanmu — kami hargai setiap masukan untuk meningkatkan layanan.</p>
+    </div>
+
+    <!-- Form -->
+    <div class="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 md:p-8 shadow-lg mb-10">
+      <form id="testimonialForm" class="grid grid-cols-1 md:grid-cols-3 gap-4 items-end">
+        <div class="md:col-span-1 space-y-2">
+          <label class="text-sm text-gray-200">Nama <span class="text-indigo-400">*</span></label>
+          <input id="tf-name" type="text" required maxlength="60"
+                 class="w-full px-4 py-3 rounded-lg bg-gray-900 border border-gray-700 text-white focus:ring-2 focus:ring-indigo-500 outline-none"
+                 placeholder="Nama lengkap" />
+        </div>
+
+        <div class="md:col-span-1 space-y-2">
+          <label class="text-sm text-gray-200">Peran / Asal (opsional)</label>
+          <input id="tf-role" type="text" maxlength="60"
+                 class="w-full px-4 py-3 rounded-lg bg-gray-900 border border-gray-700 text-white focus:ring-2 focus:ring-indigo-500 outline-none"
+                 placeholder="Mahasiswa / Developer / Klien" />
+        </div>
+
+        <div class="md:col-span-1 space-y-2">
+          <label class="text-sm text-gray-200">Rating</label>
+          <div id="starWrap" class="flex items-center gap-2">
+            <!-- stars inserted by JS -->
+            <div id="stars" class="flex gap-1"></div>
+            <span id="starValue" class="text-sm text-gray-300 pl-2">0</span>
+          </div>
+        </div>
+
+        <div class="md:col-span-3 mt-2">
+          <label class="text-sm text-gray-200">Pesan <span class="text-indigo-400">*</span></label>
+          <textarea id="tf-message" rows="4" required maxlength="800"
+                    class="w-full mt-1 px-4 py-3 rounded-lg bg-gray-900 border border-gray-700 text-white focus:ring-2 focus:ring-indigo-500 outline-none"
+                    placeholder="Ceritakan pengalamanmu menggunakan jasa kami..."></textarea>
+        </div>
+
+        <div class="md:col-span-3 flex flex-col md:flex-row gap-3 md:justify-between items-center">
+          <div class="text-sm text-gray-300">Dengan mengirim, Anda setuju komentar ditampilkan di website.</div>
+          <div class="flex gap-3">
+            <button type="button" id="clearBtn"
+                    class="px-4 py-2 rounded-lg bg-gray-700 hover:bg-gray-600 transition text-white">
+              Bersihkan
+            </button>
+            <button type="submit"
+                    class="px-5 py-2 rounded-lg bg-gradient-to-r from-blue-500 to-indigo-600 hover:scale-105 transition text-white font-semibold">
+              Kirim Testimoni
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!-- List testimoni -->
+    <div id="testiList" class="grid gap-6 md:grid-cols-2 lg:grid-cols-3"></div>
+  </div>
+</section>
+
+<script>
+  // ===== Util =====
+  const LS_KEY = 'jt_testimonials_v1';
+
+  // sanitize input to prevent HTML injection
+  function sanitize(str) {
+    if (!str) return '';
+    return str.replaceAll('&', '&amp;')
+              .replaceAll('<', '&lt;')
+              .replaceAll('>', '&gt;')
+              .replaceAll('"', '&quot;')
+              .replaceAll("'", '&#39;');
+  }
+
+  // format time ago (simple)
+  function timeAgo(ts) {
+    const s = Math.floor((Date.now() - ts) / 1000);
+    if (s < 60) return `${s}s lalu`;
+    const m = Math.floor(s/60);
+    if (m < 60) return `${m}m lalu`;
+    const h = Math.floor(m/60);
+    if (h < 24) return `${h}j lalu`;
+    const d = Math.floor(h/24);
+    if (d < 30) return `${d}h lalu`;
+    const date = new Date(ts);
+    return date.toLocaleDateString();
+  }
+
+  // generate initials avatar
+  function initials(name) {
+    const parts = name.trim().split(' ').filter(Boolean);
+    if (parts.length === 0) return 'U';
+    if (parts.length === 1) return parts[0].slice(0,2).toUpperCase();
+    return (parts[0][0] + parts[1][0]).toUpperCase();
+  }
+
+  // load testimonials
+  function loadTestimonials() {
+    const raw = localStorage.getItem(LS_KEY);
+    try {
+      return raw ? JSON.parse(raw) : [];
+    } catch {
+      return [];
+    }
+  }
+
+  function saveTestimonials(arr) {
+    localStorage.setItem(LS_KEY, JSON.stringify(arr));
+  }
+
+  // ===== Render =====
+  const testiList = document.getElementById('testiList');
+
+  function renderTestimonials() {
+    const arr = loadTestimonials().slice().reverse(); // newest first
+    testiList.innerHTML = '';
+    if (arr.length === 0) {
+      testiList.innerHTML = '<div class="md:col-span-3 text-center text-gray-400">Belum ada testimoni, jadilah yang pertama!</div>';
+      return;
+    }
+
+    arr.forEach(item => {
+      const card = document.createElement('div');
+      card.className = 'bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 shadow-lg relative';
+
+      card.innerHTML = `
+        <div class="flex items-start gap-4">
+          <div class="flex-shrink-0">
+            <div class="w-12 h-12 rounded-full flex items-center justify-center text-white font-semibold text-lg"
+                 style="background: linear-gradient(135deg, rgba(99,102,241,0.9), rgba(139,92,246,0.9))">
+              ${sanitize(initials(item.name))}
+            </div>
+          </div>
+          <div class="flex-1">
+            <div class="flex items-center justify-between gap-4">
+              <div>
+                <div class="text-sm font-semibold text-white">${sanitize(item.name)}</div>
+                <div class="text-xs text-gray-300">${sanitize(item.role || '')}</div>
+              </div>
+              <div class="text-xs text-gray-400">${timeAgo(item.time)}</div>
+            </div>
+
+            <div class="mt-3 text-gray-200 text-sm">${sanitize(item.message)}</div>
+
+            <div class="mt-4 flex items-center gap-2">
+              ${renderStarsInline(item.rating)}
+            </div>
+          </div>
+        </div>
+
+        <button data-id="${item.id}" class="delete-btn absolute top-3 right-3 text-xs text-red-400 hover:text-red-300">Hapus</button>
+      `;
+      testiList.appendChild(card);
+    });
+
+    // attach delete handlers
+    document.querySelectorAll('.delete-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const id = e.currentTarget.getAttribute('data-id');
+        deleteTestimonial(id);
+      });
+    });
+  }
+
+  function renderStarsInline(rating) {
+    let out = '';
+    for (let i=1;i<=5;i++) {
+      if (i <= rating) {
+        out += `<svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.955a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.447a1 1 0 00-.364 1.118l1.287 3.955c.3.921-.755 1.688-1.54 1.118l-3.37-2.447a1 1 0 00-1.176 0l-3.37 2.447c-.784.57-1.838-.197-1.539-1.118l1.286-3.955a1 1 0 00-.364-1.118L2.07 9.382c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.05 2.927z"/></svg>`;
+      } else {
+        out += `<svg class="w-4 h-4 text-gray-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.955a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.447a1 1 0 00-.364 1.118l1.287 3.955c.3.921-.755 1.688-1.54 1.118l-3.37-2.447a1 1 0 00-1.176 0l-3.37 2.447c-.784.57-1.838-.197-1.539-1.118l1.286-3.955a1 1 0 00-.364-1.118L2.07 9.382c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.05 2.927z"/></svg>`;
+      }
+    }
+    return out;
+  }
+
+  // ===== Actions =====
+  function addTestimonial(obj) {
+    const arr = loadTestimonials();
+    arr.push(obj);
+    saveTestimonials(arr);
+    renderTestimonials();
+  }
+
+  function deleteTestimonial(id) {
+    let arr = loadTestimonials();
+    arr = arr.filter(i => i.id !== id);
+    saveTestimonials(arr);
+    renderTestimonials();
+  }
+
+  // ===== Form / Stars behavior =====
+  (function initForm() {
+    const form = document.getElementById('testimonialForm');
+    const nameInput = document.getElementById('tf-name');
+    const roleInput = document.getElementById('tf-role');
+    const msgInput = document.getElementById('tf-message');
+    const starsWrap = document.getElementById('stars');
+    const starValue = document.getElementById('starValue');
+    const clearBtn = document.getElementById('clearBtn');
+
+    // create stars
+    let currentRating = 0;
+    for (let i=1;i<=5;i++) {
+      const s = document.createElement('button');
+      s.type = 'button';
+      s.className = 'star-btn w-8 h-8 flex items-center justify-center rounded-md';
+      s.innerHTML = `<svg class="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.955a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.447a1 1 0 00-.364 1.118l1.287 3.955c.3.921-.755 1.688-1.54 1.118l-3.37-2.447a1 1 0 00-1.176 0l-3.37 2.447c-.784.57-1.838-.197-1.539-1.118l1.286-3.955a1 1 0 00-.364-1.118L2.07 9.382c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.05 2.927z"/></svg>`;
+      s.dataset.val = i;
+      s.addEventListener('click', () => {
+        currentRating = i;
+        updateStars();
+      });
+      s.addEventListener('mouseenter', () => highlightStars(i));
+      s.addEventListener('mouseleave', () => updateStars());
+      starsWrap.appendChild(s);
+    }
+
+    function highlightStars(n) {
+      const buttons = starsWrap.querySelectorAll('.star-btn svg');
+      buttons.forEach((svg, idx) => {
+        svg.classList.toggle('text-yellow-400', idx < n);
+        svg.classList.toggle('text-gray-400', idx >= n);
+      });
+    }
+    function updateStars() {
+      const buttons = starsWrap.querySelectorAll('.star-btn svg');
+      buttons.forEach((svg, idx) => {
+        svg.classList.toggle('text-yellow-400', idx < currentRating);
+        svg.classList.toggle('text-gray-400', idx >= currentRating);
+      });
+      starValue.textContent = currentRating;
+    }
+
+    // clear form
+    clearBtn.addEventListener('click', () => {
+      nameInput.value = '';
+      roleInput.value = '';
+      msgInput.value = '';
+      currentRating = 0;
+      updateStars();
+    });
+
+    // submit
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = nameInput.value.trim();
+      const role = roleInput.value.trim();
+      const msg = msgInput.value.trim();
+      const rating = currentRating;
+
+      if (!name || !msg) {
+        alert('Nama dan pesan wajib diisi.');
+        return;
+      }
+      const id = 't_' + Date.now() + '_' + Math.random().toString(36).slice(2,8);
+      const obj = { id, name: sanitize(name), role: sanitize(role), message: sanitize(msg), rating, time: Date.now() };
+
+      addTestimonial(obj);
+
+      // success feedback & reset
+      form.reset();
+      currentRating = 0;
+      updateStars();
+      // small toast
+      showToast('Terima kasih! Testimoni Anda telah ditambahkan.');
+    });
+
+    // initial render
+    updateStars();
+    renderTestimonials();
+  })();
+
+  // simple toast
+  function showToast(msg) {
+    const t = document.createElement('div');
+    t.className = 'fixed right-6 bottom-6 bg-indigo-600 text-white px-4 py-2 rounded shadow-lg animate-fade-in';
+    t.textContent = msg;
+    document.body.appendChild(t);
+    setTimeout(() => {
+      t.classList.add('opacity-0');
+      setTimeout(()=> t.remove(), 400);
+    }, 2200);
+  }
+
+  // small fade-in keyframes (inline style)
+  const style = document.createElement('style');
+  style.innerHTML = `
+    @keyframes fade-in { from { opacity: 0; transform: translateY(6px);} to { opacity: 1; transform: translateY(0);} }
+    .animate-fade-in { animation: fade-in 300ms ease-out; }
+  `;
+  document.head.appendChild(style);
+</script>
+
+
+  <!-- Hubungi Kami -->
+<section id="contact" class="py-20 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white">
+  <div class="max-w-6xl mx-auto px-6">
+    <!-- Judul -->
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-bold mb-4">Hubungi Kami</h2>
+      <p class="text-gray-300 max-w-2xl mx-auto">
+        Ada pertanyaan atau butuh jasa joki tugas IT?  
+        Isi form di bawah atau hubungi kami langsung.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <!-- Form Kontak -->
+      <form class="bg-gray-800 p-8 rounded-2xl shadow-lg space-y-6">
+        <div>
+          <label class="block mb-2 text-sm font-medium">Nama</label>
+          <input type="text" placeholder="Masukkan nama Anda"
+            class="w-full px-4 py-3 rounded-lg bg-gray-900 border border-gray-700 focus:ring-2 focus:ring-indigo-500 outline-none">
+        </div>
+        <div>
+          <label class="block mb-2 text-sm font-medium">Email</label>
+          <input type="email" placeholder="Masukkan email Anda"
+            class="w-full px-4 py-3 rounded-lg bg-gray-900 border border-gray-700 focus:ring-2 focus:ring-indigo-500 outline-none">
+        </div>
+        <div>
+          <label class="block mb-2 text-sm font-medium">Pesan</label>
+          <textarea rows="4" placeholder="Tulis pesan Anda"
+            class="w-full px-4 py-3 rounded-lg bg-gray-900 border border-gray-700 focus:ring-2 focus:ring-indigo-500 outline-none"></textarea>
+        </div>
+        <button type="submit"
+          class="w-full bg-indigo-600 hover:bg-indigo-700 transition rounded-lg py-3 font-semibold">
+          Kirim Pesan
+        </button>
+      </form>
+
+      <!-- Info Kontak -->
+      <div class="space-y-8">
+        <div class="flex items-center space-x-4">
+          <div class="p-4 bg-indigo-600 rounded-full shadow-md">
+            
+          </div>
+          <div>
+            <h4 class="text-lg font-semibold">Alamat</h4>
+            <p class="text-gray-300">Lombok Ntb</p>
+          </div>
+        </div>
+
+        <div class="flex items-center space-x-4">
+          <div class="p-4 bg-indigo-600 rounded-full shadow-md">
+            
+          </div>
+          <div>
+            <h4 class="text-lg font-semibold">Telepon</h4>
+            <p class="text-gray-300">+62 878-7416-6765</p>
+          </div>
+        </div>
+
+        <div class="flex items-center space-x-4">
+          <div class="p-4 bg-indigo-600 rounded-full shadow-md">
+            
+          </div>
+          <div>
+            <h4 class="text-lg font-semibold">Email</h4>
+            <p class="text-gray-300">support@jokitugas.com</p>
+          </div>
+        </div>
+
+        <!-- Sosial Media -->
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Ikuti Kami</h4>
+          <div class="flex space-x-4">
+            <!-- Facebook -->
+            <a href="#" class="p-3 bg-gray-700 rounded-full hover:bg-indigo-600 transition">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M22 12a10 10 0 10-11.5 9.95v-7.05h-2.2V12h2.2V9.8c0-2.2 1.3-3.45 3.3-3.45.95 0 1.95.17 1.95.17v2.15h-1.1c-1.1 0-1.45.68-1.45 1.38V12h2.45l-.39 2.9h-2.06v7.05A10 10 0 0022 12z"/>
+              </svg>
+            </a>
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/vjuaan__/" class="p-3 bg-gray-700 rounded-full hover:bg-pink-600 transition">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm10 2c1.66 0 3 1.34 3 3v10c0 1.66-1.34 3-3 3H7c-1.66 0-3-1.34-3-3V7c0-1.66 1.34-3 3-3h10zm-5 3a5 5 0 100 10 5 5 0 000-10zm0 2c1.66 0 3 1.34 3 3s-1.34 3-3 3a3 3 0 110-6zm4.5-.25a1.25 1.25 0 100 2.5 1.25 1.25 0 000-2.5z"/>
+              </svg>
+            </a>
+            <!-- WhatsApp -->
+            <a href="+62 878-7416-6765" class="p-3 bg-gray-700 rounded-full hover:bg-green-600 transition">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C6.48 2 2 6.24 2 11.78c0 2.1.67 4.07 1.8 5.68L2 22l4.72-1.75A9.77 9.77 0 0012 21.56c5.52 0 10-4.24 10-9.78S17.52 2 12 2zm0 17.56c-1.7 0-3.29-.52-4.61-1.42l-.33-.21-2.8 1.04.77-2.71-.18-.34A7.66 7.66 0 014.4 11.8c0-4.21 3.48-7.64 7.6-7.64s7.6 3.43 7.6 7.64-3.48 7.64-7.6 7.64z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+ <!-- Footer -->
+<footer class="relative bg-gray-950 text-gray-300 pt-20 pb-8 overflow-hidden">
+  <!-- Animasi Latar (Lingkaran Bergerak) -->
+  <div class="absolute inset-0 overflow-hidden">
+    <div class="absolute w-72 h-72 bg-indigo-600 rounded-full mix-blend-screen filter blur-3xl opacity-20 animate-pulse -top-20 -left-20"></div>
+    <div class="absolute w-72 h-72 bg-purple-600 rounded-full mix-blend-screen filter blur-3xl opacity-20 animate-ping bottom-0 right-0"></div>
+  </div>
+
+  <!-- Garis Atas Glow -->
+  <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500"></div>
+
+  <div class="relative max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-12">
+    <!-- Brand / Logo -->
+    <div>
+      <h2 class="text-2xl font-bold text-white mb-4">JokiTugas<span class="text-indigo-500">IT</span></h2>
+      <p class="text-gray-400 leading-relaxed">
+        Partner terpercaya dalam menyelesaikan tugas IT Anda.  
+        Cepat, profesional, dan aman.
+      </p>
+    </div>
+
+    <!-- Quick Links -->
+    <div>
+      <h4 class="text-lg font-semibold text-white mb-4">Menu</h4>
+      <ul class="space-y-3">
+        <li><a href="#home" class="hover:text-indigo-400 transition">Beranda</a></li>
+        <li><a href="#services" class="hover:text-indigo-400 transition">Layanan</a></li>
+        <li><a href="#contact" class="hover:text-indigo-400 transition">Hubungi Kami</a></li>
+        <li><a href="#faq" class="hover:text-indigo-400 transition">FAQ</a></li>
+      </ul>
+    </div>
+
+    <!-- Sosial Media -->
+    <div>
+      <h4 class="text-lg font-semibold text-white mb-4">Ikuti Kami</h4>
+      <div class="flex space-x-4">
+        <!-- Facebook -->
+        <a href="#" class="p-3 bg-gray-800 rounded-full hover:bg-indigo-600 transition">
+          <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M22 12a10 10 0 10-11.5 9.95v-7.05h-2.2V12h2.2V9.8c0-2.2 1.3-3.45 3.3-3.45.95 0 1.95.17 1.95.17v2.15h-1.1c-1.1 0-1.45.68-1.45 1.38V12h2.45l-.39 2.9h-2.06v7.05A10 10 0 0022 12z"/>
+          </svg>
+        </a>
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/vjuaan__/" class="p-3 bg-gray-800 rounded-full hover:bg-pink-600 transition">
+          <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm10 2c1.66 0 3 1.34 3 3v10c0 1.66-1.34 3-3 3H7c-1.66 0-3-1.34-3-3V7c0-1.66 1.34-3 3-3h10zm-5 3a5 5 0 100 10 5 5 0 000-10zm0 2c1.66 0 3 1.34 3 3s-1.34 3-3 3a3 3 0 110-6zm4.5-.25a1.25 1.25 0 100 2.5 1.25 1.25 0 000-2.5z"/>
+          </svg>
+        </a>
+        <!-- WhatsApp -->
+        <a href="#" class="p-3 bg-gray-800 rounded-full hover:bg-green-600 transition">
+          <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2C6.48 2 2 6.24 2 11.78c0 2.1.67 4.07 1.8 5.68L2 22l4.72-1.75A9.77 9.77 0 0012 21.56c5.52 0 10-4.24 10-9.78S17.52 2 12 2zm0 17.56c-1.7 0-3.29-.52-4.61-1.42l-.33-.21-2.8 1.04.77-2.71-.18-.34A7.66 7.66 0 014.4 11.8c0-4.21 3.48-7.64 7.6-7.64s7.6 3.43 7.6 7.64-3.48 7.64-7.6 7.64z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Copyright -->
+  <div class="relative mt-12 text-center text-gray-500 text-sm border-t border-gray-800 pt-6">
+    © 2025 <span class="text-white font-semibold">JokiTugasIT</span>. Semua Hak Dilindungi.
+  </div>
+</footer>
+
+  <!-- Script untuk hamburger menu & typing effect -->
+  <script>
+    // Navbar toggle
+    const btn = document.getElementById('menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+
+    // Typing effect
+    const textElement = document.getElementById("typing-text");
+    const words = [
+      "Cepat dan Tepat Waktu",
+      "Coding Rapi dan Profesional",
+      "Bisa Revisi Sesuai Permintaan",
+      "Harga Terjangkau"
+    ];
+    let wordIndex = 0;
+    let charIndex = 0;
+    let currentWord = "";
+    let isDeleting = false;
+
+    function typeEffect() {
+      if (wordIndex >= words.length) wordIndex = 0;
+      currentWord = words[wordIndex];
+
+      if (isDeleting) {
+        textElement.textContent = currentWord.substring(0, charIndex--);
+        if (charIndex < 0) {
+          isDeleting = false;
+          wordIndex++;
+        }
+      } else {
+        textElement.textContent = currentWord.substring(0, charIndex++);
+        if (charIndex > currentWord.length) {
+          isDeleting = true;
+          setTimeout(typeEffect, 1500); // jeda sebelum hapus
+          return;
+        }
+      }
+      setTimeout(typeEffect, isDeleting ? 50 : 100);
+    }
+    typeEffect();
+  </script>
+</body>
+</html>
